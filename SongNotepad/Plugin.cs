@@ -16,9 +16,10 @@ namespace SongNotepad
     [Plugin(RuntimeOptions.SingleStartInit)]
     public class Plugin
     {
-        public const string Name = "SongNotepad";
-        public const string HarmonyId = "";
+        //public const string Name = "SongNotepad";
+        //public const string HarmonyId = "com.github.BODYPRINT.SongNotepad";
 
+        //private static Harmony _harmony;
 
         internal static Plugin instance { get; private set; }
         internal static string Name => "SongNotepad";
@@ -29,6 +30,12 @@ namespace SongNotepad
         /// [Init] methods that use a Constructor or called before regular methods like InitWithConfig.
         /// Only use [Init] with one Constructor.
         /// </summary>
+        
+        //public Plugin()
+        //{
+        //    _harmony = new Harmony(HarmonyId);
+        //}
+
         public void Init(IPALogger logger)
         {
             instance = this;

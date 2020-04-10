@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
+using BS_Utils.Utilities;
+
 
 namespace SongNotepad
 {
@@ -86,24 +88,23 @@ namespace SongNotepad
             Logger.log?.Debug($"{name}: OnDestroy()");
             instance = null; // This MonoBehaviour is being destroyed, so set the static instance property to null.
             RemoveEvents();
-
         }
         #endregion
 
-        private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+        private void OnLevelSelect(LevelCollectionViewController _levelCollection, IPreviewBeatmapLevel _previewBeatmapLevel)
         {
-            Logger.log.Log(logLevel, "Song Notepad : Scene Name = " + scene.name);          
+            Logger.log.Log(logLevel, "Song Notepad : Song Name = " + _levelCollection.name);          
         }
 
         private void AddEvents()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            BSEvents.levelSelected += OnLevelSelect;
         }
 
 
         private void RemoveEvents()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            BSEvents.levelSelected -= OnLevelSelect;
         }
 
     }
