@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "id": "SongNotepad",
+  "name": "SongNotepad",
+  "author": "",
+  "version": "0.0.2",
+  "description": "",
+  "gameVersion": "1.9.0",
+  "dependsOn": {
+
+  },
+  "features": []
+}
